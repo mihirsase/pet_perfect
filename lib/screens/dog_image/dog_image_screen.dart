@@ -4,6 +4,7 @@ import 'package:pet_perfect/blocs/dog_image/dog_image_bloc.dart';
 import 'package:pet_perfect/blocs/dog_image/dog_image_event.dart';
 import 'package:pet_perfect/blocs/dog_image/dog_image_state.dart';
 import 'package:pet_perfect/components/atoms/loading_atom.dart';
+import 'package:pet_perfect/components/molecules/image_video_molecule.dart';
 import 'package:pet_perfect/services/pallete.dart';
 
 class DogImageScreen extends StatefulWidget {
@@ -79,13 +80,8 @@ class _DogImageScreenState extends State<DogImageScreen> {
     }
 
     return Center(
-      child: Image.network(
-        _dogImageBloc.dogImage!.url!,
-        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-          if (loadingProgress == null) return child;
-          return const LoadingAtom();
-        },
-        height: MediaQuery.of(context).size.height * 0.5,
+      child: ImageVideoMolecule(
+        url: _dogImageBloc.dogImage!.url!,
       ),
     );
   }
