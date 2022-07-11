@@ -1,16 +1,25 @@
-# pet_perfect
+# PetPerfect
 
-A new Flutter project.
+This is a flutter application for a demonstrating bloc pattern architecture.
+## APK Link
+[Android apk download link](https://drive.google.com/file/d/1bxF8cGWyodpHMh1TLArHA_mfQfr70zuo/view?usp=sharing)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Project Structure
 
-A few resources to get you started if this is your first Flutter project:
+- **.screens** : All the main screens for the app goes into this package
+- **.blocs** : All business logic is inside these files
+- **.components** : All reusable widgets are stored in this package
+    - **.atoms** : Atoms are completely stateless reusable components.
+    - **.molecules** : Molecules are stateful reusable components.
+    - **.organisms** : Organisms have their own state,bloc and probably won't be used again.
+- **.models** : All the blueprint files for the app goes into this package
+- **.services** : All classes which provides additional help goes in this package
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Third party packages used in the project
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **flutter_bloc** : Used for separating business logic from ui code
+- **dio** : Used for making REST API requests
+- **hive + hive_flutter** : Used to persist some user data
+- **video_player** : Used to play videos in the app
+- **path_provider** : Gives a path to store user data
