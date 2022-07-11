@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pet_perfect/blocs/initial/initial_event.dart';
 import 'package:pet_perfect/services/wayfinder.dart';
 
-class InitialBloc extends Bloc<InitialEvent,void>{
+class InitialBloc extends Bloc<InitialEvent, void> {
   final GlobalKey<NavigatorState> navigatorKey;
 
   InitialBloc({
@@ -22,5 +22,8 @@ class InitialBloc extends Bloc<InitialEvent,void>{
       ],
     );
 
+    await Future.delayed(const Duration(seconds: 2));
+
+    Wayfinder.instance.dogImageScreen();
   }
 }

@@ -12,22 +12,15 @@ class InitialScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _InitialScreenState createState() => _InitialScreenState();
+  InitialScreenState createState() => InitialScreenState();
 }
 
-class _InitialScreenState extends State<InitialScreen> {
-  late InitialBloc _initialBloc;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class InitialScreenState extends State<InitialScreen> {
   @override
   Widget build(final BuildContext _) {
     return BlocProvider<InitialBloc>(
       create: (final BuildContext _) {
-        return _initialBloc = InitialBloc(
+        return InitialBloc(
           navigatorKey: widget.navigatorKey,
         )..add(LoadApp());
       },
@@ -44,7 +37,12 @@ class _InitialScreenState extends State<InitialScreen> {
       top: false,
       child: Scaffold(
         body: Center(
-          child: Text('Pet Perfect'),
+          child: Text(
+            'Pet Perfect',
+            style: TextStyle(
+              fontSize: 32,
+            ),
+          ),
         ),
       ),
     );

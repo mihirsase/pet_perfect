@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pet_perfect/screens/initial_screen.dart';
-import 'package:pet_perfect/services/pallete.dart';
 
 void main() {
   runApp(const PetPerfect());
@@ -22,13 +21,6 @@ class _PetPerfectState extends State<PetPerfect> {
       navigatorKey: _navigatorKey,
       title: 'Pet Perfect',
       themeMode: ThemeMode.dark,
-      theme: ThemeData(
-        canvasColor: Pallete.black,
-        appBarTheme: AppBarTheme(
-          color: Pallete.black,
-          centerTitle: true,
-        ),
-      ),
       debugShowCheckedModeBanner: false,
       builder: (BuildContext context, Widget? child) {
         return MediaQuery(
