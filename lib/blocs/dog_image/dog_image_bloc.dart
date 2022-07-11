@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:pet_perfect/blocs/dog_image/dog_image_event.dart';
 import 'package:pet_perfect/blocs/dog_image/dog_image_state.dart';
 import 'package:pet_perfect/model/dog_image/dog_image.dart';
@@ -25,6 +26,8 @@ class DogImageBloc extends Bloc<DogImageEvent, DogImageState> {
 
   Future<void> _onSaveDogImage(SaveDogImage event, Emitter<DogImageState> emit) async {
     emit(DogImageLoading());
+    var box = await Hive.openBox('PetPerfectBox');
+    box.put(box.length + 1, dogImage?.toMap());
 
     Wayfinder.instance.postsScreen();
     emit(DogImageLoaded());

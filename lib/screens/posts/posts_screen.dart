@@ -6,6 +6,7 @@ import 'package:pet_perfect/blocs/posts/posts_state.dart';
 import 'package:pet_perfect/components/atoms/loading_atom.dart';
 import 'package:pet_perfect/model/posts/post.dart';
 import 'package:pet_perfect/services/pallete.dart';
+import 'package:pet_perfect/services/wayfinder.dart';
 
 class PostsScreen extends StatefulWidget {
   const PostsScreen({Key? key}) : super(key: key);
@@ -47,6 +48,17 @@ class _PostsScreenState extends State<PostsScreen> {
                   ),
                 ),
                 backgroundColor: Pallete.white,
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      Wayfinder.instance.savedImages();
+                    },
+                    icon: Icon(
+                      Icons.image,
+                      color: Pallete.black,
+                    ),
+                  )
+                ],
               ),
             ),
           );
