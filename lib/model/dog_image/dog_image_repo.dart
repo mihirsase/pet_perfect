@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:pet_perfect/model/dog_image.dart';
+import 'package:pet_perfect/model/dog_image/dog_image.dart';
 import 'package:pet_perfect/services/api_requester.dart';
 
 class DogImageRepo {

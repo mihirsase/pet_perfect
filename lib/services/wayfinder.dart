@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_perfect/screens/dog_image/dog_image_screen.dart';
+import 'package:pet_perfect/screens/posts/posts_screen.dart';
 
 class Wayfinder {
   static final Wayfinder instance = Wayfinder._();
@@ -71,6 +72,17 @@ class Wayfinder {
           return const DogImageScreen();
         },
         settings: RouteSettings(name: (DogImageScreen).toString()),
+      ),
+    );
+  }
+
+  void postsScreen() {
+    _replace(
+      materialPageRoute: MaterialPageRoute(
+        builder: (final BuildContext _) {
+          return const PostsScreen();
+        },
+        settings: RouteSettings(name: (PostsScreen).toString()),
       ),
     );
   }

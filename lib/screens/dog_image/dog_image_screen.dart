@@ -40,7 +40,9 @@ class _DogImageScreenState extends State<DogImageScreen> {
               body: _body(state),
               floatingActionButton: state is DogImageLoaded && _dogImageBloc.dogImage?.url != null
                   ? FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _dogImageBloc.add(SaveDogImage());
+                      },
                       child: const Icon(Icons.navigate_next),
                     )
                   : null,
@@ -79,8 +81,7 @@ class _DogImageScreenState extends State<DogImageScreen> {
     return Center(
       child: Image.network(
         _dogImageBloc.dogImage!.url!,
-        loadingBuilder: (BuildContext context, Widget child,
-            ImageChunkEvent? loadingProgress) {
+        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
           if (loadingProgress == null) return child;
           return const LoadingAtom();
         },

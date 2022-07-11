@@ -5,6 +5,10 @@ class Pallete {
     return const Color(0xFF000000);
   }
 
+  static Color get white {
+    return const Color(0xFFFFFFFF);
+  }
+
   static Color get red {
     return Color(0xFFFD5335);
   }
